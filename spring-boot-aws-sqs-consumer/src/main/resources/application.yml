@@ -1,0 +1,17 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: spring-boot-aws-sqs-consumer
+
+  cloud:
+    aws:
+      region:
+        static: ap-south-1          # your region
+      credentials:
+        access-key: ${AWS_ACCESS_KEY_ID:}
+        secret-key: ${AWS_SECRET_ACCESS_KEY:}
+      endpoint: https://sqs.ap-south-1.amazonaws.com  # base endpoint, no queue name
+app:
+  sqs:
+    queue-name: first-queue
